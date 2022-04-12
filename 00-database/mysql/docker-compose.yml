@@ -9,6 +9,6 @@ services:
       - ./mysqld/data:/var/lib/mysql
       - ./mysqld/sqls:/docker-entrypoint-initdb.d
     ports:
-      - 5001:3306
+      - 5002:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
