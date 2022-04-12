@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  mongo:
+    image: mongo:latest
+    volumes:
+      - ./mongodb:/data/db
+    ports:
+      - 27017:27017
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+    networks:
+      - default
+
+  app:
+    build: ./server/
+    restart: always
+    ports:
+      - 80:5000
+    networks:
+      - default
+
+networks:
+  node-chapter-1:
+    driver: bridge
