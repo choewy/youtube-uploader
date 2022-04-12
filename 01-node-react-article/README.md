@@ -6,7 +6,7 @@
 
 ## API Docs
 
-- [/app/README.md](https://github.com/choewy/node-chapter-1/blob/master/app/README.md)
+- [/app/README.md](https://github.com/choewy/node-toy-projects/blob/e7f8705b1edb5c32e64d89ad6bcf7e2b25d7bb58/01-node-react-article/server/README.md)
 
 ## Development
 
@@ -15,7 +15,7 @@
 
 ## Environment
 
-### Server(`/app/.env`)
+### Server(`/server/.env`)
 
 ```env
 NODE_PORT=${EXPRESS_SERVER_PORT}
@@ -28,10 +28,10 @@ COOKIE_TOKEN_KEY=${COOKIE_TOKEN_KEY}
 COOKIE_TOKEN_EXP_KEY=${COOKIE_TOKEN_EXPIRED_KEY}
 ```
 
-### Client(`/react/.env`)
+### Client(`/client/.env`)
 
 ```env
-BUILD_PATH='../app/view'
+BUILD_PATH='../server/view'
 ```
 
 ## Local Run
@@ -40,9 +40,9 @@ BUILD_PATH='../app/view'
 $ git clone https://github.com/choewy/node-chapter-1.git
 ```
 
-위의 내용을 참고하여 `/app/.env`과 `/client/.env`을 작성하세요.
+위의 내용을 참고하여 `/server/.env`를 작성해주셔야 합니다.
 
-> ※ 단, `/app/.env`의 MONGO_URI의 IP주소는 Docker network에서 동작하는 MongoDB 컨테이너의 IP를 입력해야 합니다.
+> ※ 단, MONGO_URI의 IP주소는 Docker network에서 동작하는 MongoDB 컨테이너의 IP를 입력해야 합니다.
 
 ```
 $ docker-compose up -d
