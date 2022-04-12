@@ -1,0 +1,264 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.header-wrapper {
+  width: 100%;
+  background-color: rgb(115, 0, 255);
+}
+
+.header-menu-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-menu-item {
+  padding: 10px;
+}
+
+.header-menu-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.signup-wrapper,
+.signin-wrapper {
+  margin-top: 50px;
+  width: 600px;
+}
+
+.signup-form,
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-input, 
+.signin-input {
+  box-sizing: border-box;
+  padding: 15px 10px;
+  min-width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.signup-button,
+.signin-button {
+  padding: 10px;
+  min-width: 300px;
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.articles-wrapper {
+  margin-top: 20px;
+  background-color: #fff;
+  padding: 50px 30px;
+  border: 0;
+  border-radius: 10px;
+}
+ 
+.articles-table {
+  min-width: 800px;
+  font-size: 14px;
+  overflow-x: scroll;
+  border-spacing: 0;
+  table-layout:auto;
+}
+
+.articles-table td {
+  border: 1px solid #eee;
+}
+
+.articles-table thead th,
+.articles-table tbody td {
+  padding: 10px 0;
+}
+
+.articles-table thead th:nth-child(1),
+.articles-table tbody td:nth-child(1) {
+  width: 50px;
+  text-align: center;
+}
+
+.articles-table thead th:nth-child(3),
+.articles-table thead th:nth-child(4),
+.articles-table tbody td:nth-child(3),
+.articles-table tbody td:nth-child(4) {
+  width: 150px;
+  text-align: center;
+}
+
+.articles-table thead th:nth-child(5),
+.articles-table tbody td:nth-child(5) {
+  width: 100px;
+  text-align: center;
+}
+
+.articles-table thead th:nth-child(2),
+.articles-table tbody td:nth-child(2) {
+  padding: 10px;
+}
+
+.articles-title-link {
+  text-decoration: none;
+}
+
+.article-wrapper,
+.article-write-wrapper,
+.article-edit-wrapper {
+  background: #fff;
+  max-width: 700px;
+  width: 100%;
+  padding: 50px;
+  margin-top: 20px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.article-wrapper {
+  margin-bottom: 20px;
+}
+
+.article-title {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-info {
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+}
+
+.article-content {
+  padding: 20px 0 50px;
+  white-space: pre-wrap;
+}
+
+.article-button-group,
+.article-write-button-group,
+.article-edit-button-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.article-button-group button,
+.article-write-button-group button,
+.article-edit-button-group button {
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.article-write-input,
+.article-edit-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  font-size: 24px;
+  border: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.article-write-textarea {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  box-sizing: border-box;
+  padding: 10px 15px 30px;
+  resize: none;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.article-edit-textarea {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  box-sizing: border-box;
+  padding: 10px 15px 30px;
+  resize: none;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.comments-wrapper,
+.comment-write-wrapper { 
+  margin: 0 0 20px;
+  background: #fff;
+  max-width: 700px;
+  width: 100%;
+  padding: 0 50px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.comment-write-textarea,
+.comment-edit-textarea {
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
+  padding: 10px 15px 10px;
+  resize: none;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  margin: 20px 0 0;
+}
+
+.comment-write-button-group,
+.comment-edit-button-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.comment-write-button-group button,
+.comment-edit-button-group  button {
+  cursor: pointer;
+}
+
+.comment-wrapper {
+  border: 0;
+  margin: 10px 0;
+}
+
+.comment-content { 
+  padding: 20px;
+}
+
+.comment-info {
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+}
