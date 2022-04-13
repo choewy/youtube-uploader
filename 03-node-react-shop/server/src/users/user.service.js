@@ -11,8 +11,7 @@ const UserService = {
     const user = new User(userDto);
     await HashPassord(user);
 
-    const token = await GenerateToken(user._id);
-    return token;
+    return await GenerateToken(user.userId);
   },
 
   signin: async (userDto) => {
@@ -23,8 +22,7 @@ const UserService = {
     const verify = await VerifyPassword(password, user);
     if (!verify) throw UserErrors.IncorrectEmailOrPassword();
 
-    const token = await GenerateToken(user._id);
-    return token;
+    return await GenerateToken(user.userId);
   },
 };
 

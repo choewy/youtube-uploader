@@ -15,8 +15,8 @@ export const VerifyPassword = async (password, user) => {
   return await bcrpyt.compare(password, user.password);
 };
 
-export const GenerateToken = async (_id) => {
-  return jwt.sign({ _id }, secret, jwtOptions);
+export const GenerateToken = async (userId) => {
+  return jwt.sign({ userId }, secret, jwtOptions);
 };
 
 export const VerifyAuthorization = async (Authorization) => {
@@ -25,7 +25,7 @@ export const VerifyAuthorization = async (Authorization) => {
   try {
     const payload = jwt.verify(token, secret);
     if (!payload) return 1;
-    return payload._id;
+    return payload.userId;
   } catch (error) {
     if (error.message === 'jwt malformed') return 1;
     return 2;

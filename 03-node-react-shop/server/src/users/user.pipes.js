@@ -51,16 +51,19 @@ export const UserAuthorizePipe = async (req, res, next) => {
 
   if (payload === 0) {
     const { code, message } = UserErrors.UndefinedToken();
+    res.cookie('token', undefined);
     return res.status(code).send({ message });
   }
 
   if (payload === 1) {
     const { code, message } = UserErrors.InvalidToken();
+    res.cookie('token', undefined);
     return res.status(code).send({ message });
   }
 
   if (payload === 2) {
     const { code, message } = UserErrors.ExpiredToken();
+    res.cookie('token', undefined);
     return res.status(code).send({ message });
   }
 
@@ -68,6 +71,7 @@ export const UserAuthorizePipe = async (req, res, next) => {
 
   if (!user) {
     const { code, message } = UserErrors.NotExistUser();
+    res.cookie('token', undefined);
     return res.status(code).send({ message });
   }
 

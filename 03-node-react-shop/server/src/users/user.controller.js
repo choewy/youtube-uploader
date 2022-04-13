@@ -42,7 +42,7 @@ const UserController = () => {
     return res.status(200).send({
       ok: true,
       user: {
-        _id: req.user._id,
+        userId: req.user.userId,
         name: req.user.name,
         email: req.user.email,
         role: req.user.role,
