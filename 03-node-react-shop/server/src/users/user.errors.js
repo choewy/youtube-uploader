@@ -23,13 +23,13 @@ const UserErrors = {
     code: 400,
     message: '존재하지 않는 이메일 계정입니다.',
   }),
-  WrongPassword: () => ({
+  IncorrectEmailOrPassword: () => ({
     code: 400,
-    message: '비밀번호가 일치하지 않습니다.',
+    message: '이메일 계정 또는 비밀번호가 올바르지 않습니다.',
   }),
   UndefinedToken: () => ({
-    code: 400,
-    message: '토큰이 존재하지 않습니다.',
+    code: 401,
+    message: '로그인 후 이용 가능한 서비스입니다.',
   }),
   InvalidToken: () => ({
     code: 400,

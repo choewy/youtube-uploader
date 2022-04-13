@@ -1,6 +1,6 @@
 import User from './user.model';
 import UserErrors from './user.errors';
-import { VerifyToken } from './user.utils';
+import { VerifyAuthorization } from './user.utils';
 
 export const UserSignupPipe = (req, res, next) => {
   const { name, email, password, confirmPassword } = req.body;
@@ -45,8 +45,9 @@ export const UserSigninPipe = (req, res, next) => {
 };
 
 export const UserAuthorizePipe = async (req, res, next) => {
-  const token = req.cookies['token'];
-  const payload = await VerifyToken(token);
+  const { authorization } = req.headers;
+
+  const payload = await VerifyAuthorization(authorization);
 
   if (payload === 0) {
     const { code, message } = UserErrors.UndefinedToken();

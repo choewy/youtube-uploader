@@ -21,7 +21,7 @@ const UserService = {
 
     const { password } = userDto;
     const verify = await VerifyPassword(password, user);
-    if (!verify) throw UserErrors.WrongPassword();
+    if (!verify) throw UserErrors.IncorrectEmailOrPassword();
 
     const token = await GenerateToken(user._id);
     return token;

@@ -19,16 +19,15 @@ export const GenerateToken = async (_id) => {
   return jwt.sign({ _id }, secret, jwtOptions);
 };
 
-export const VerifyToken = async (token) => {
-  if (!token) return 0;
+export const VerifyAuthorization = async (Authorization) => {
+  const [type, token] = (Authorization || '').split(' ');
+  if (type !== 'Bearer' || !token) return 0;
   try {
     const payload = jwt.verify(token, secret);
     if (!payload) return 1;
     return payload._id;
   } catch (error) {
-    if (error.message === 'jwt malformed') {
-      return 1;
-    }
+    if (error.message === 'jwt malformed') return 1;
     return 2;
   }
 };

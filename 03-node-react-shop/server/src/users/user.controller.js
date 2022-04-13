@@ -12,7 +12,7 @@ const UserController = () => {
   const router = Router();
 
   // user signup API
-  router.post('/', UserSignupPipe, async (req, res) => {
+  router.post('/signup', UserSignupPipe, async (req, res) => {
     try {
       const userDto = req.body;
       const token = await UserService.signup(userDto);
@@ -25,7 +25,7 @@ const UserController = () => {
   });
 
   // user signin API
-  router.post('/sign', UserSigninPipe, async (req, res) => {
+  router.post('/signin', UserSigninPipe, async (req, res) => {
     try {
       const userDto = req.body;
       const token = await UserService.signin(userDto);
@@ -38,7 +38,7 @@ const UserController = () => {
   });
 
   // user auth check API
-  router.get('/auth', UserAuthorizePipe, async (req, res) => {
+  router.get('/me', UserAuthorizePipe, async (req, res) => {
     return res.status(200).send({
       ok: true,
       user: {
@@ -53,7 +53,7 @@ const UserController = () => {
   });
 
   // user signout API
-  router.delete('/out', UserAuthorizePipe, async (_, res) => {
+  router.delete('/signout', UserAuthorizePipe, async (_, res) => {
     res.cookie('token', undefined);
     res.status(200).send({ ok: true });
   });
