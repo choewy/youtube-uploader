@@ -1,16 +1,14 @@
 'use strict';
 
 import express from 'express';
-import AppConfigs from './src/app.configs';
-import AppMiddlewares from './src/app.middlewares';
+import AppModules from './src/app.modules';
 import AppMongoose from './src/app.mongoose';
 import AppRoutes from './src/app.routes';
 
 const app = express();
 
-AppConfigs(app);
-AppMongoose(app);
-AppMiddlewares(app);
+AppMongoose();
+AppModules(app);
 AppRoutes(app);
 
 export default app;

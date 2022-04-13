@@ -1,23 +1,24 @@
 'use strict';
 
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
+import AppConfigs from './app.configs';
+
+const { uri, dbName } = AppConfigs.mongoose;
 
 const logs = {
   success: 'MongoDB Connection Success!',
-  error: 'MongoDB Connection Error!'
+  error: 'MongoDB Connection Error!',
 };
 
-const AppMongoose = (app) => {
-  const {
+const AppMongoose = () => {
+  mongoose.connect(
     uri,
-    dbName
-  } = app.get('mongoose');
-  mongoose.connect(uri, {
-      dbName
+    {
+      dbName,
     },
     (error) =>
-    error ? console.log(logs.error, error) : console.log(logs.success)
+      error ? console.log(logs.error, error) : console.log(logs.success),
   );
-}
+};
 
 export default AppMongoose;

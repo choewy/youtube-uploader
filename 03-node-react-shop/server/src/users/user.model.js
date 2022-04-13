@@ -13,6 +13,10 @@ const UserSchema = new Schema(
     password: {
       type: String,
     },
+    role: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,

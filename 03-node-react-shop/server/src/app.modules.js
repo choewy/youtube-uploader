@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import morgan from 'morgan';
 
-const AppMiddlewares = (app) => {
+const AppModules = (app) => {
   app.use(morgan('dev'));
   app.use(express.json());
   app.use(
@@ -17,4 +17,4 @@ const AppMiddlewares = (app) => {
   app.use(cors());
 };
 
-export default AppMiddlewares;
+export default AppModules;
