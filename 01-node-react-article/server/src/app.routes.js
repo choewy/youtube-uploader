@@ -7,10 +7,13 @@ const build = path.join(__dirname, '../view');
 const html = path.join(__dirname, '../view/index.html');
 
 module.exports = (app) => {
-    app.use('/api/auth', require('./controllers/user.controller'));
-    app.use('/api/articles', require('./controllers/article.controller'));
-    app.use('/api/articles', require('./controllers/comment.controller'));
+  app.use('/api/auth', require('./controllers/user.controller'));
+  app.use('/api/articles', require('./controllers/article.controller'));
+  app.use(
+    '/api/articles/:articleId/comments',
+    require('./controllers/comment.controller'),
+  );
 
-    app.use(express.static(build));
-    app.get('*', (req, res) => res.sendFile(html));
+  app.use(express.static(build));
+  app.get('*', (req, res) => res.sendFile(html));
 };
