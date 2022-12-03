@@ -10,6 +10,13 @@ export class Bootstrap {
   }
 
   public static async run() {
-    await this.app.get(YoutubeService).open({ headless: false });
+    await this.app.get(YoutubeService).uploadVedio(
+      {
+        path: './temp/test.mp4',
+        title: `${Date.now()}`,
+        description: 'TEST',
+      },
+      { headless: false },
+    );
   }
 }
