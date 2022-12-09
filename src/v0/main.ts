@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { YoutubeUploader } from '../class';
+import { YoutubeUploader } from './class';
 
 const test = async () => {
   const uploader = new YoutubeUploader();

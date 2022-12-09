@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -b ./tsconfig.build.json",
-    "start:dev": "nodemon --watch src/**/* -e ts --exec ts-node src/test/index.ts"
+    "start:v0": "nodemon --watch src -e ts --exec ts-node src/v0/main.ts"
   },
   "repository": {
     "type": "git",
